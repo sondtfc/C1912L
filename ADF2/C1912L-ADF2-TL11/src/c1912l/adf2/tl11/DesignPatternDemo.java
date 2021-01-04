@@ -7,6 +7,7 @@ package c1912l.adf2.tl11;
 
 import c1912l.adf2.tl11.factory.FactoryDesignPattner;
 import c1912l.adf2.tl11.factory.ICommand;
+import c1912l.adf2.tl11.factory.TurnOffCommand;
 
 /**
  *
