@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountedCompleter;
 import java.util.concurrent.ForkJoinPool;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,7 +24,7 @@ public class ForkJoinPoolDemo {
     public static void main(String[] args) {
         // TODO code application logic here
         //Buoc 1: Khoi tao ForkJoinPool
-        ForkJoinPool fjp = new ForkJoinPool(2);
+        ForkJoinPool fjp = new ForkJoinPool(20);
         
         //Buoc 3: goi task
         List<String> list = getStringList();
@@ -60,6 +62,11 @@ public class ForkJoinPoolDemo {
             if((end - start) <= THRESHOLD){
                 //in ra chuoi
                 for (int i = start; i < end; i++) {
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(ForkJoinPoolDemo.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     String get = list.get(i);
                     System.out.println(get +" from " + Thread.currentThread().getName());
                 }
