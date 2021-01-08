@@ -61,12 +61,14 @@ public class LambdaDemo {
         
         List<Integer> list = getList();
         System.out.println("before sort: " + list);
-        Collections.sort(list, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer t, Integer t1) {
-                return -(t - t1);
-            }
-        } );
+//        Collections.sort(list, new Comparator<Integer>() {
+//            @Override
+//            public int compare(Integer t, Integer t1) {
+//                return -(t - t1);
+//            }
+//        } );
+//        
+        Collections.sort(list, (t, t1) -> t -t1);
         
         System.out.println("after sort: " + list);
     }
