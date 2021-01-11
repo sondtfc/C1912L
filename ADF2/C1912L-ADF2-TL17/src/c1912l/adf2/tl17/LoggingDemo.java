@@ -5,6 +5,7 @@
  */
 package c1912l.adf2.tl17;
 
+import java.net.Socket;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,6 +29,7 @@ public class LoggingDemo {
         
         logger.debug("Debug");
         logger.fatal("Debug");
+        
     }
     
 }
